@@ -2,6 +2,7 @@ import React, {useState, useContext} from 'react';
 import {ProdComponent, ProdContext} from '../../contexts/ProductContext'
 import * as C from './styles';
 
+import {Theme} from '../../components/Theme'
 import {Input} from '../../components/Input/inputs'
 
 export const ProductRegister = () => {
@@ -17,51 +18,55 @@ export const ProductRegister = () => {
   
   const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault()
-      addProduto({cdProduto: codigoProd,
+      addProduto({
+      cdProduto: codigoProd,
       ctProduto: categoriaProd,
       nomeProduto: nomeProduto,
       nomeFornecedor: nomeFornecedor,
-      vlProduto: valorProduto})
+      vlProduto: valorProduto,
+    })
   }
 
   return (
-    <C.Container>
+    <Theme>
+      <C.Container>
         <C.NameProd>
-          Nome Produto
+          Registro de Produto
         </C.NameProd>
         <C.Form onSubmit={handleSubmit}>
           <Input 
-            label="Nome Produto" 
-            id="NProd" 
-            value={nomeProduto} 
-            handleChangeInput={setNomeProduto}
-          />
-          <Input 
-            label="Nome Produto" 
-            id="NProd" 
-            value={categoriaProd} 
-            handleChangeInput={setCategoriaProd}
-          />
-          <Input 
-            label="Nome Produto" 
-            id="NProd" 
-            value={codigoProd} 
-            handleChangeInput={setCodigoProd}
-          />
-          <Input 
-            label="Nome Produto" 
-            id="NProd" 
-            value={nomeFornecedor} 
-            handleChangeInput={setNomeFornecedor}
-          />
-          <Input 
-            label="Nome Produto" 
-            id="NProd" 
-            value={valorProduto} 
-            handleChangeInput={setValorProduto}
-          />
-        <C.Button>Enviar</C.Button>
-      </C.Form>
-    </C.Container>
+              label="Código do Produto" 
+              id="cdProduto" 
+              value={codigoProd} 
+              handleChangeInput={setCodigoProd}
+            />
+            <Input 
+              label="Nome Produto" 
+              id="nomeProduto" 
+              value={nomeProduto} 
+              handleChangeInput={setNomeProduto}
+            />
+            <Input 
+              label="Categoria Produto" 
+              id="ctProduto" 
+              value={categoriaProd} 
+              handleChangeInput={setCategoriaProd}
+            />
+            <Input 
+              label="Nome do Fornecedor" 
+              id="NomeFornecedor" 
+              value={nomeFornecedor} 
+              handleChangeInput={setNomeFornecedor}
+            />
+            <Input 
+              label="Valor do Produto" 
+              id="vlProduto" 
+              value={valorProduto} 
+              handleChangeInput={setValorProduto}
+            />
+          <C.Button>Enviar</C.Button>
+        </C.Form>
+      </C.Container>
+    </Theme>  
   )
 }
