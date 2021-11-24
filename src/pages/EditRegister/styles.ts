@@ -28,7 +28,6 @@ export const Form = styled.form`
 `;
 
 export const Span = styled.span`
-  display: block;
   color: red;
   font-size: 13px;
 `

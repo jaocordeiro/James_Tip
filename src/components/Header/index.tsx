@@ -1,9 +1,13 @@
 import * as H from './styles'
 
-export const Header = () => {
+interface HeaderProps {
+    title: string
+}
+
+export const Header = ({title}: HeaderProps) => {
     return (
         <H.Container>
-            <h1>Cadastro de Produto</h1>
+            <h1>{title}</h1>
         </H.Container>
     )
 }
