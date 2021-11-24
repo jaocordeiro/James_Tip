@@ -12,7 +12,9 @@ Requisitos:
 
 Como iniciar o Projeto:
 
-1 - Dentro da pasta `james-tip` dar o comando `yarn start`
+1 - Dentro da pasta `James-Tip` dar o comando `yarn install`
+
+2 - Ainda na mesma `James-Tip` dar o comando `yarn start`
 
 ---
 
